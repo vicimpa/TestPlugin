@@ -1,0 +1,23 @@
+plugins {
+  id 'java'
+  id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+  id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+group 'wsv'
+version '1.0'
+
+repositories {
+  mavenCentral()
+  jcenter()
+  maven { url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
+}
+
+dependencies {
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.10"
+  compileOnly "org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT"
+}
+
+shadowJar {
+  minimize()
+}
